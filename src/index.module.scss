@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 9px;
+  background-color: rgba(240 240 240 / 1);
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: rgba(240 240 240 / 0.7);
+  }
+}
