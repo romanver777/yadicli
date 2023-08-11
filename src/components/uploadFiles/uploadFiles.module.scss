@@ -1,0 +1,30 @@
+@import "../../style/scss/mixins.scss";
+.inputWr {
+  margin-bottom: 6px;    
+  display: flex;
+  align-items: center;
+}
+input[type="file"] {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.label {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  border: 1px solid $border-blue;
+  font-size: 0.8331rem;
+  cursor: pointer;
+  padding: 9px;
+  color: $text-color;
+  border-radius: 8px;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: $border-lightblue-hover;
+  }
+}
+.addedFiles{
+  font-size: 0.8331rem;
+}
