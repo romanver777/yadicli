@@ -1,0 +1,19 @@
+@import "../../style//scss/mixins.scss";
+.header {
+  height: 64px;
+  display: flex;
+  color: $text-color-darkbg;
+  background-color: $bg-lightgray;
+  box-shadow: 0 1px 0px 0 $box-shadow;
+}
+.container {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.title {
+  color: $text-color;
+}
