@@ -20,39 +20,41 @@ const App = () => {
   useEffect(() => {
     const token = Cookies.get("token");
 
-    if (token === undefined) {
-      (window as any).YaAuthSuggest.init(
-        {
-          client_id: "0f5e2ea359834517b4419ac4f30dbfc8",
-          response_type: "token",
-          redirect_uri: "https://ydisk.netlify.app/token",
-        },
-        "https://ydisk.netlify.app",
-        {
-          parentId: "app__loginBtn--ovkK6",
-          view: "button",
-          buttonSize: "m",
-          buttonView: "main",
-          buttonTheme: "light",
-          buttonBorderRadius: "10",
-          buttonIcon: "ya",
-        }
-      )
-        .then(({ handler }: { handler: any }) => handler())
-        .then((data: any) => {
-          Cookies.set("token", data.access_token, {
-            expires: +data.expires_in,
-          });
+    if (!auth) {
+      if (token === undefined) {
+        (window as any).YaAuthSuggest.init(
+          {
+            client_id: "0f5e2ea359834517b4419ac4f30dbfc8",
+            response_type: "token",
+            redirect_uri: "https://ydisk.netlify.app/token",
+          },
+          "https://ydisk.netlify.app",
+          {
+            parentId: "app__loginBtn--ovkK6",
+            view: "button",
+            buttonSize: "m",
+            buttonView: "main",
+            buttonTheme: "light",
+            buttonBorderRadius: "10",
+            buttonIcon: "ya",
+          }
+        )
+          .then(({ handler }: { handler: any }) => handler())
+          .then((data: any) => {
+            Cookies.set("token", data.access_token, {
+              expires: +data.expires_in,
+            });
 
-          dispatch(setAuth());
-          navigate("/disk");
-        })
-        .catch((error: Error) => console.log("error", error));
-    } else {
-      dispatch(setAuth());
-      navigate("/disk");
+            dispatch(setAuth());
+            navigate("/disk");
+          })
+          .catch((error: Error) => console.log("error", error));
+      } else {
+        dispatch(setAuth());
+        navigate("/disk");
+      }
     }
-  }, []);
+  }, [auth]);
 
   return (
     <>

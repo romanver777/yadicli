@@ -42,7 +42,11 @@ const initialState: IResourses = {
 export const fetchResoursesSlice = createSlice({
   name: "fetch-resourses",
   initialState,
-  reducers: {},
+  reducers: {
+    clearData: (state) => {
+      state.data = null;
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchResourses.pending, (state) => {
@@ -60,4 +64,5 @@ export const fetchResoursesSlice = createSlice({
   },
 });
 
+export const { clearData } = fetchResoursesSlice.actions;
 export default fetchResoursesSlice.reducer;
