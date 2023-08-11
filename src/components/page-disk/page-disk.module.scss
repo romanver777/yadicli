@@ -1,0 +1,55 @@
+@import "../../style/scss/mixins.scss";
+.main {
+  display: flex;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+.disk{
+    padding-top: 16px;
+}
+.total {
+  font-size: 0.875rem;
+  margin: 10px 0;
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.listItem {
+  border-radius: 7px;
+  width: 100px;
+  box-sizing: border-box;
+  font-size: 0.8125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: $background-btn-hover;
+  }
+}
+.listItemFile {
+  justify-content: flex-end;
+}
+.name {
+  text-align: center;
+  margin: 5px 0;
+}
+.nameFile {
+  margin-top: 7px;
+}
+.message{
+  text-align: center;
+  font-size: 0.875rem;
+}

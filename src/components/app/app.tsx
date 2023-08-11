@@ -7,6 +7,7 @@ import * as selectors from "../../store/selectors";
 import { setAuth } from "../../store/auth-reducer";
 
 import PrivateRoute from "../private-route/private-route";
+import PageDisk from "../page-disk/page-disk";
 import Token from "../token/token";
 
 import style from "./app.module.scss";
@@ -60,7 +61,7 @@ const App = () => {
           path="/disk"
           element={
             <PrivateRoute auth={auth}>
-              <div>disk</div>
+              <PageDisk />
             </PrivateRoute>
           }
         />

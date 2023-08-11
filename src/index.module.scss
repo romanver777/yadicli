@@ -1,10 +1,11 @@
+@import "./style/scss/mixins.scss";
 body {
   margin: 0;
   font-size: 16px;
   font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.6);
+  color: $text-color;
 }
 button {
   margin: 0;
@@ -14,12 +15,12 @@ button {
   cursor: pointer;
   transition: 0.3s;
   padding: 9px;
-  background-color: rgba(240 240 240 / 1);
-  color: rgba(0, 0, 0, 0.6);
+  background-color: $background-btn;
+  color: $text-color;
   border-radius: 8px;
 
   &:hover {
     transition: 0.3s;
-    background-color: rgba(240 240 240 / 0.7);
+    background-color: $background-btn-hover;
   }
 }
